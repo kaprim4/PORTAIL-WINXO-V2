@@ -1,0 +1,151 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    app:borderThickness="2dp"
+    app:borderColor="@color/colorGrey"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="# %s"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:background="@color/colorGreen"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/sitename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sitename"
+            android:padding="5dp"
+            android:textAlignment="textStart"
+            android:layout_marginEnd="5dp"
+            android:background="@color/colorBlue"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/ref"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Réf. Intervention:  %s"
+            android:padding="5dp"
+            android:textAlignment="textStart"
+            android:background="@color/colorDarkGrey"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/date_heure_add_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date demande"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/date_heure_add_bloc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_calendar"
+                        android:backgroundTint="@color/colorBlue"/>
+                    <TextView
+                        android:id="@+id/date_add_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:text="20/01/2021" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_baseline_time_24"
+                        android:backgroundTint="@color/colorBlue" />
+                    <TextView
+                        android:id="@+id/heure_add_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:text="08:30" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/claim_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aperçu de la demande"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/claim_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="claim_detail" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/more_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:src="@drawable/ic_view_icon_24"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/colorOrange"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "135928431681",
+    "project_id": "portail-winxo-b2b16",
+    "storage_bucket": "portail-winxo-b2b16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135928431681:android:b4b40b113d47db2119f2c0",
+        "android_client_info": {
+          "package_name": "com.winxo.portailwinxo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135928431681-bq4kja5hin7slgtidu04d0q6qi0ngv0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOSP1fTAdfPVdOuIrqg5l588bLXIWX3U4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135928431681-bq4kja5hin7slgtidu04d0q6qi0ngv0u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

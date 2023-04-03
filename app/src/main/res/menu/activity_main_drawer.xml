@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="@string/reseaux_sociaux">
+        <menu>
+            <item
+                android:id="@+id/nav_fb"
+                android:icon="@drawable/icone_facebook"
+                android:iconTint="@color/colorBlue"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/nav_website"
+                android:icon="@drawable/ic_baseline_public_24"
+                android:title="@string/notre_site_internet" />
+        </menu>
+    </item>
+    <item android:title="@string/a_propos_de_l_application">
+        <menu>
+            <item
+                android:id="@+id/nav_presentation"
+                android:icon="@drawable/ic_about"
+                android:title="@string/presentation" />
+            <item
+                android:id="@+id/nav_mentions_legales"
+                android:icon="@drawable/ic_legal"
+                android:title="@string/mentions_legales" />
+        </menu>
+    </item>
+</menu>

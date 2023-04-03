@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="2dp">
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="5dp"
+        android:text="%s :"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="10"
+        android:background="@color/colorGreen"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="M"
+        android:textSize="12sp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:gravity="top"
+        android:text="3"
+        android:textSize="10sp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+</LinearLayout>

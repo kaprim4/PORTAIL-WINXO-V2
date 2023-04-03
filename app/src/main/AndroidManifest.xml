@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <permission android:name="com.example.gcm.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- Required only if your app targets Android 13 or higher. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" android:minSdkVersion="33" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" android:minSdkVersion="33" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" android:minSdkVersion="33" />
+
+    <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" tools:ignore="ReservedSystemPermission" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+
+    <dist:module dist:instant="true" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/favicon_apag_new"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.APAG"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".View.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".View.PermissionRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.MenuActivity"
+            android:label="@string/title_activity_menu" />
+        <activity
+            android:name=".View.ApagActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_main"
+            android:parentActivityName=".View.MenuActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.ApagListActivity"
+            android:parentActivityName=".View.ApagActivity" />
+        <activity
+            android:name=".View.ApagSupervisorActivity"
+            android:parentActivityName=".View.MenuActivity" />
+        <activity
+            android:name=".View.ApagSupervisorAllActivity"
+            android:parentActivityName=".View.ApagSupervisorActivity" />
+        <activity
+            android:name=".View.ClaimActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Interventions techniques"
+            android:parentActivityName=".View.MenuActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.ClaimListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Interventions techniques"
+            android:parentActivityName=".View.ClaimActivity" />
+        <activity
+            android:name=".View.ClaimSupervisorActivity"
+            android:parentActivityName=".View.MenuActivity" />
+        <activity
+            android:name=".View.ClaimDetailActivity"
+            android:parentActivityName=".View.ClaimSupervisorActivity" />
+        <activity
+            android:name=".View.OrderActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Commandes"
+            android:parentActivityName=".View.MenuActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".View.OrderListActivity"
+            android:parentActivityName=".View.OrderActivity" />
+        <activity
+            android:name=".View.OrderSupervisorActivity"
+            android:parentActivityName=".View.MenuActivity" />
+        <activity
+            android:name=".View.PresentationActivity"
+            android:parentActivityName=".View.ApagActivity" />
+        <activity android:name=".View.ResetPasswordActivity" />
+        <activity
+            android:name=".View.LegalMentionActivity"
+            android:parentActivityName=".View.ApagActivity" />
+        <activity android:name=".View.UserProfileActivity" />
+        <activity
+            android:name=".View.ParamsActivity"
+            android:parentActivityName=".View.ApagActivity" />
+        <activity
+            android:name=".View.UserUpdateActivity"
+            android:parentActivityName=".View.ParamsActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.PasswordUpdateActivity"
+            android:parentActivityName=".View.ParamsActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.ActivateGpsActivity"
+            android:parentActivityName=".View.LoginActivity" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:taskAffinity=".string">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".Model.ForegroundService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".Service.PortailWinxoService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

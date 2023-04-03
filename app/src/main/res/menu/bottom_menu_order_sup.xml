@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/order_this_month"
+        android:title="Mois en cours"
+        android:icon="@drawable/ic_calendar_check"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:title=""
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/order_all"
+        android:title="Toutes les saisies"
+        android:icon="@drawable/ic_about"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBlue">#0094ca</color>
+    <color name="colorOrange">#dd9900</color>
+    <color name="colorGold">#deb63a</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#4f4f4f</color>
+    <color name="colorWhiteGrey">#eee</color>
+    <color name="colorDarkGrey">#646c9a</color>
+    <color name="colorGreen">#0abb87</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorYellow">#ffb822</color>
+    <color name="colorBlueTitle">#5d78ff</color>
+    <color name="colorRed">#C30808</color>
+    <color name="success">#0abb87</color>
+    <color name="primary">#5867dd</color>
+    <color name="warning">#ffb822</color>
+
+    <color name="fab_color_pressed">#007787</color>
+    <color name="btn_send_pressed">#006633</color>
+    <color name="btn_context_menu_text_red">#ffff0000</color>
+    <color name="text_like_counter">#2b5a83</color>
+    <color name="colorWood">#a9620c</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+
+    <color name="order_0">#1f5be5</color>
+    <color name="order_1">#ab1fe5</color>
+    <color name="order_2">#1a9cbc</color>
+    <color name="order_3">#1cd4bf</color>
+    <color name="order_4">#06ac0c</color>
+    <color name="order_5">#ff0000</color>
+    <color name="order_6">#cd0808</color>
+    <color name="order_7">#000000</color>
+    <color name="order_8">#ff8d00</color>
+    <color name="order_9">#ffbb00</color>
+    <color name="order_99">#1f5be5</color>
+</resources>

@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".View.ApagActivity"
+    tools:openDrawer="end">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/Theme.APAG.AppBarOverlay">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:title="APAG">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_header_screen_blank"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.7"
+                    android:contentDescription="TODO" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:layout_collapseMode="pin"
+                    app:navigationIcon="?attr/homeAsUpIndicator"
+                    app:popupTheme="@style/Theme.APAG.PopupOverlay">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/icon_menu_01"
+                        app:tint="@color/colorWhite"/>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:behavior_overlapTop="30dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="100dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/site_info" />
+
+                    <include layout="@layout/site_wholeprice" />
+
+                    <include layout="@layout/site_actual_price" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:background="@drawable/white_box2"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/bloc_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/colorWhiteGrey"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_baseline_connect_without_contact_24" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:text="CHANGEMENT DE PRIX"
+                                android:textColor="@color/colorGrey"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="5dp"
+                                android:paddingBottom="0dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:text="Prix décidés à être appliqués lors du prochain cycle de changement de prix"
+                                    android:textColor="@color/colorBlack" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/colorWhiteGrey" />
+
+                            <LinearLayout
+                                android:id="@+id/ssp_line31"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="@color/colorYellow"
+                                android:orientation="horizontal"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="10dp">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@drawable/ic_baseline_warning_24" />
+
+                                <TextView
+                                    android:id="@+id/proposalAppTime_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:text="@string/caution_changement_prix"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/grade2_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="GASOIL :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade2_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade1_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Super SP :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade1_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade3_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="HUILE :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade3_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade4_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mix 0 :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade4_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade5_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mix 4% :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade5_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade6_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mix 5% :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade6_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade7_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mix 6% :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade7_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade8_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mix 7% :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade8_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade9_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mix 2% :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade9_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade10_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mix 3% :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade10_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade11_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mix 8% :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/grade11_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="0.00"
+                                        android:inputType="numberDecimal"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="18sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/dhttc_litre"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/bloc_10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/colorWhiteGrey"
+                                    android:orientation="horizontal"
+                                    android:padding="5dp">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="Appliquer ce prix à:"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="0dp"
+                                    android:paddingTop="0dp"
+                                    android:paddingRight="0dp"
+                                    android:paddingBottom="0dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/date"
+                                        android:textColor="@color/colorBlue"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold"
+                                        tools:ignore="HardcodedText" />
+                                    <com.vicmikhailau.maskededittext.MaskedEditText
+                                        android:id="@+id/date_add_field"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:backgroundTint="@color/colorBlue"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:foregroundTint="@color/colorWhite"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorWhite"
+                                        android:textColorHint="@color/colorWhite"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        app:mask="##/##/####" /> />
+                                    <ImageView
+                                        android:id="@+id/date_popup"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="5dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/ic_calendar" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/time_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="0dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingRight="0dp"
+                                    android:paddingBottom="0dp">
+                                    <TextView
+                                        android:layout_width="150dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Heure :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <Spinner
+                                        android:id="@+id/time_add_spinner"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="1"
+                                        android:spinnerMode="dropdown"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:fontFamily="@font/poppins_bold"
+                                        style="@android:style/Widget.Spinner"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/colorWhiteGrey" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="0dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="0dp">
+                                    <Button
+                                        android:id="@+id/confirm_btn"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/colorOrange"
+                                        android:text="Confirmer"
+                                        android:textColor="@color/colorWhite" />
+                                    <Button
+                                        android:id="@+id/cancel_btn"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/colorOrange"
+                                        android:text="Annuler"
+                                        android:textColor="@color/colorWhite" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/loading_bloc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_anchor="@id/CardView"
+            app:layout_anchorGravity="bottom">
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:indeterminateDrawable="@drawable/anim_progress_icon"
+                android:paddingTop="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/bebas_neue"
+                android:text="@string/loadingTxt"
+                android:textAlignment="center"
+                android:textColor="@color/colorGrey"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:fabCradleMargin="15dp"
+            app:fabCradleRoundedCornerRadius="50dp">
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/b_nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
+                android:outlineSpotShadowColor="@color/colorTransparent"
+                app:elevation="0dp"
+                app:itemIconTint="@color/colorBlue"
+                app:itemTextColor="@color/colorBlue"
+                app:menu="@menu/bottom_menu_apag"
+                tools:targetApi="p" />
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/home_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_home_black_24dp"
+            app:layout_anchor="@id/bottomAppBar"
+            app:maxImageSize="38dp" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

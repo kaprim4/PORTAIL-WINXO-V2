@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".View.OrderActivity"
+    tools:openDrawer="end">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/Theme.APAG.AppBarOverlay">
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:title="Commandes">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_header_screen_blank"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.7" />
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:layout_collapseMode="pin"
+                    app:navigationIcon="?attr/homeAsUpIndicator"
+                    app:popupTheme="@style/Theme.APAG.PopupOverlay">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/icon_menu_02"
+                        app:tint="@color/colorWhite"/>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:behavior_overlapTop="30dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="100dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/site_info" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:background="@drawable/white_box2"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/bloc_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/colorWhiteGrey"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_baseline_local_shipping_24"
+                                app:tint="@color/colorGrey" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:text="NOUVELLE COMMANDE CARBURANT"
+                                android:textColor="@color/colorGrey"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/bloc_7"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:padding="0dp">
+
+                                <LinearLayout
+                                    android:id="@+id/grade1_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="180dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="Super SP :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+
+                                    <EditText
+                                        android:id="@+id/grade1_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="48dp"
+                                        android:layout_weight="1"
+                                        android:layout_marginEnd="5dp"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="Qté d'ordre"
+                                        android:inputType="number"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="M3"
+                                        android:gravity="end"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/grade2_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="180dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="GASOIL :"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+
+                                    <EditText
+                                        android:id="@+id/grade2_price"
+                                        android:layout_width="0dp"
+                                        android:layout_height="48dp"
+                                        android:layout_weight="1"
+                                        android:layout_marginEnd="5dp"
+                                        android:background="@drawable/basic_input"
+                                        android:hint="Qté d'ordre"
+                                        android:inputType="number"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorBlack" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="M3"
+                                        android:gravity="end"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/colorWhiteGrey" />
+
+                                <LinearLayout
+                                    android:id="@+id/total_row_add"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="0dp">
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="5dp"
+                                        android:src="@drawable/ic_baseline_production_quantity_limits_24"
+                                        app:tint="@color/colorBlue" />
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="Total à commander :"
+                                        android:textColor="@color/colorBlue"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/sum_qty"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:background="@drawable/basic_input"
+                                        android:backgroundTint="@color/colorBlue"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:foregroundTint="@color/colorWhite"
+                                        android:text="0"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorWhite"
+                                        android:textColorHint="@color/colorWhite"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="M3"
+                                        android:gravity="end"
+                                        android:textColor="@color/colorBlue"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/bloc_10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/colorWhiteGrey"
+                                    android:orientation="horizontal"
+                                    android:padding="5dp">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="Dates:"
+                                        android:textColor="@color/colorGrey"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="0dp"
+                                    android:paddingTop="0dp"
+                                    android:paddingRight="0dp"
+                                    android:paddingBottom="0dp">
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="5dp"
+                                        android:src="@drawable/ic_baseline_local_shipping_24"
+                                        app:tint="@color/colorBlue" />
+                                    <TextView
+                                        android:layout_width="151dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="Date livraison contractuelle:"
+                                        android:textColor="@color/colorBlue"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <EditText
+                                        android:id="@+id/date_shipping_field"
+                                        android:layout_width="0dp"
+                                        android:layout_height="48dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:backgroundTint="@color/colorBlue"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:foregroundTint="@color/colorWhite"
+                                        android:text="01/01/2023"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorWhite"
+                                        android:textColorHint="@color/colorWhite"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="0dp"
+                                    android:paddingTop="0dp"
+                                    android:paddingRight="0dp"
+                                    android:paddingBottom="0dp"
+                                    android:layout_marginTop="10dp">
+                                    <TextView
+                                        android:layout_width="180dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="Date livraison souhaitée:"
+                                        android:textColor="@color/colorGrey"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:textStyle="bold" />
+                                    <com.vicmikhailau.maskededittext.MaskedEditText
+                                        android:id="@+id/date_add_field"
+                                        android:layout_width="0dp"
+                                        android:layout_height="48dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/basic_input"
+                                        android:text="01012022"
+                                        android:inputType="date"
+                                        android:padding="10dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:layout_marginEnd="5dp"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="16sp"
+                                        app:mask="##/##/####" />
+                                    <ImageView
+                                        android:id="@+id/date_popup"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:src="@drawable/ic_calendar" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/colorWhiteGrey"
+                                    android:orientation="horizontal"
+                                    android:padding="5dp">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="Conditions générales de commande:"
+                                        android:textColor="@color/colorGrey"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="0dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="0dp">
+                                    <ImageView
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:src="@drawable/ic_baseline_warning_24"
+                                        app:tint="@color/colorYellow"/>
+                                    <TextView
+                                        android:id="@+id/btn_cgv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="@string/saisies_des_commandes_title"
+                                        android:textColor="@color/colorBlack" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/colorWhiteGrey" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="0dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="0dp">
+                                    <Button
+                                        android:id="@+id/confirm_btn"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/colorOrange"
+                                        android:text="Confirmer"
+                                        android:textColor="@color/colorWhite" />
+                                    <Button
+                                        android:id="@+id/cancel_btn"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/colorOrange"
+                                        android:text="Annuler"
+                                        android:textColor="@color/colorWhite" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/loading_bloc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_anchor="@id/CardView"
+            app:layout_anchorGravity="bottom">
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:indeterminateDrawable="@drawable/anim_progress_icon"
+                android:paddingTop="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/bebas_neue"
+                android:text="@string/loadingTxt"
+                android:textAlignment="center"
+                android:textColor="@color/colorGrey"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:fabCradleMargin="15dp"
+            app:fabCradleRoundedCornerRadius="50dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/b_nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
+                android:outlineSpotShadowColor="@color/colorTransparent"
+                app:elevation="0dp"
+                app:itemIconTint="@color/colorBlue"
+                app:itemTextColor="@color/colorBlue"
+                app:menu="@menu/bottom_menu_order"
+                tools:targetApi="p" />
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/home_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_home_black_24dp"
+            app:layout_anchor="@id/bottomAppBar"
+            app:maxImageSize="38dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

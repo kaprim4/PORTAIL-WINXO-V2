@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTransparent"
+    app:cardBackgroundColor="@color/colorBlue"
+    app:cardCornerRadius="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_baseline_contact_support_24"
+            android:backgroundTint="@color/colorWhite"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="@string/need_help"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/bebas_neue"
+            android:textSize="24sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text="Pour toute demande d'information, vous pouvez nous adresser un mail sur:"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorWhite" />
+        <TextView
+            android:id="@+id/mail_support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="support_apag@winxo.com"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/bebas_neue"
+            android:textSize="18sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text="Ou contactez nous directement sur:"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorWhite" />
+        <TextView
+            android:id="@+id/tel_support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+212 522 424 300"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/bebas_neue"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorWhiteGrey" />
+
+        <Button
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorOrange"
+            android:text="Fermer"
+            android:textSize="16sp"
+            android:fontFamily="@font/bebas_neue"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
